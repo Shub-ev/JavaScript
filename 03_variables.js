@@ -16,7 +16,7 @@ console.log(b);
 // 1 Number 
 var num = 10;
 num = 5.8;
-console.log(num);
+console.log(typeof num);
 
 // 2 string 
 let str = "MasterJS"

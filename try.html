@@ -3,14 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=4.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./10_canvas.js">
 </head>
 
 <body>
-    <button>Update</button>
-    <canvas></canvas>
+    <img src="./images/image1.png" alt="" id="image1">
+    <h1>Hello</h1>
+    <script>
+        const im = document.getElementById("image1");
+
+        im.addEventListener("click", () => {
+            let currImg = im.src.split("/").pop();
+            console.log(currImg);
+            if (currImg === "image1.png") {
+                im.src = "./images/image.png";
+            }
+            else {
+                im.src = "./images/image1.png";
+            }
+        })
+    </script>
 </body>
 
 </html>
