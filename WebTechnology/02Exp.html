@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link id="cssChange" rel="stylesheet" href="./02Exp.css">
+</head>
+<body>
+    <div class="page">
+        <form action="" id="login">
+            <button id="themeChange" type="button">Theme Change</button>
+            <label class="title">LOGIN</label>
+            <input type="text" placeholder="Enter name....">
+            <input type="text" placeholder="Enter email address....">
+            <input type="password" placeholder="Password">
+            <div style="width: 80%; display: flex; justify-content: end;" style="margin: -10px;">
+                <span style="font-size: 18px;">Forget password? <span style="color: blue; font-weight: bold;">Reset</span></span>
+            </div>
+            <div class="buttons">
+                <button type="submit">SUBMIT</button>
+                <button type="reset">RESET</button>
+            </div>
+        </form>
+
+        <script>
+            const themeChange = document.getElementById("themeChange");
+            const linkCSS = document.getElementById("cssChange");
+
+            themeChange.addEventListener("click", () => {
+                console.log(document.body.style.backgroundColor);
+                if(document.body.style.backgroundColor !== "black"){
+                    document.body.style.backgroundColor = "black";
+                }
+                else{
+                    document.body.style.backgroundColor = "white";
+                }
+            })
+        </script>
+    </div>
+</body>
+</html>

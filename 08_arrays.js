@@ -6,6 +6,7 @@ console.log(typeof arr);
 
 //get the index of the item
 console.log(arr.indexOf(1)); //gives the index of the first occurance of the object
+console.log(arr.indexOf(1, 1)); //gives the index of the first occurance of the object from the specified index (second parameter)
 
 //insert data at end
 let newLen = arr.push(1, 4, " ") //method is used to push one or more data & ******returns new length
