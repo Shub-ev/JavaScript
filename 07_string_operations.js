@@ -1,16 +1,15 @@
-str = "Master JavaScript Master"  //str is string variable which is also an string object instance
+str = "Master JavaScript Master" //str is string variable which is also an string object instance
 console.log(typeof str);
 
 
 //find the character at a specific location
-console.log(str[5]);
-
+console.log(str[6]);
 
 //find the length of the string object
 console.log(str.length);
 
 
-//check if string contain a substring 
+//check if string contain a substring
 // 1. includes()
 console.log(str.includes("Master"))
 // 2. startsWith()
@@ -39,8 +38,8 @@ console.log(str.toUpperCase());
 
 
 //updating part of the string
-console.log(str.replace('ster', "STER")); //replaces first instance of the specified substring with provided substring
-console.log(str.replaceAll("Ma", "ma")); //replaces all instances of the substring with specified string
+console.log(str.replace('ster', "STER")); //returns new string with replaced first instance of the specified substring with provided substring
+console.log(str.replaceAll("Ma", "ma")); //returns new string which replaces all instances of the substring with specified string
 
 
 //spliting the string object into number of string objects on the basis of common attribute " "
