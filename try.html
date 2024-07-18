@@ -6,7 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Lorem ipsum dolor, sit amet <br>consectetur adipisicing elit. Beatae, non?</p>
-    <input type="text">
+    <label for="chk">Check</label>
+    <input type="checkbox" value="chk">
+    <div class="" style="transition: all 0.5s; padding: 50px; background-color: ;">
+        <button>Submit</button>
+    </div>
+    <script>
+        const a = document.querySelector("input");
+        const btn = document.querySelector("div");
+
+        btn.addEventListener("mouseover", () => {
+            if(a.checked === false){
+                btn.style.marginLeft = "300px";
+            }
+            else{
+
+            }
+        })
+
+        btn.addEventListener("mouseout", () => {
+            btn.style.marginLeft = "0px";
+        })
+    </script>
 </body>
 </html>
