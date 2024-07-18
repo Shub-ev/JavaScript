@@ -1,0 +1,32 @@
+<!-- Events are things that happen in the system you are programming — the 
+system produces (or "fires") a signal of some kind when an event occurs,
+ and provides a mechanism by which an action can be automatically taken 
+ (that is, some code running) when the event occurs. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click</button> <!-- here we are passing js function as ******inline event handler********* -->
+
+    <script>
+        //inline event handler function
+        function changeClr(){
+            const btn = document.querySelector("button");
+            const rndCol = `rgb(${Math.random() * 255} ${Math.random() * 255} ${Math.random() * 255})`;
+            btn.style.backgroundColor = rndCol;
+            console.log("Jack Hero");
+        }
+
+        //adding event listner using addEventListener
+        const btn = document.getElementById("button");
+        btn.addEventListener("click", () => {
+            console.log("message");
+        })
+    </script>
+</body>
+</html>

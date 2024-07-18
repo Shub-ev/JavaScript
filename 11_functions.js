@@ -32,3 +32,7 @@ console.log((function () { //this type of functions are not hoisted
 // document.addEventListener("DOMContentLoad", function(event){ //here we have passed an anonymous function
 //     console.log("Hello");
 // })
+
+(function() { //immediately invoked function expression IIFE
+    console.log("Hello"); 
+})();
