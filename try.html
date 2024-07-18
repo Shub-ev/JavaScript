@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     <label for="chk">Check</label>
     <input type="checkbox" value="chk">
     <div class="" style="transition: all 0.5s; padding: 50px; background-color: ;">
@@ -28,5 +29,28 @@
             btn.style.marginLeft = "0px";
         })
     </script>
+=======
+<<<<<<< HEAD
+    <img src="./images/image1.png" alt="" id="image1">
+    <h1>Hello</h1>
+    <script>
+        const im = document.getElementById("image1");
+
+        im.addEventListener("click", () => {
+            let currImg = im.src.split("/").pop();
+            console.log(currImg);
+            if (currImg === "image1.png") {
+                im.src = "./images/image.png";
+            }
+            else {
+                im.src = "./images/image1.png";
+            }
+        })
+    </script>
+=======
+    <p>Lorem ipsum dolor, sit amet <br>consectetur adipisicing elit. Beatae, non?</p>
+    <input type="text">
+>>>>>>> 7364875f316826d917129c4bf559b858ce881f08
+>>>>>>> 65258bf7887b193bf451a4283472cd826d8bf4d9
 </body>
 </html>

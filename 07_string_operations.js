@@ -1,10 +1,9 @@
-str = "Master JavaScript Master"  //str is string variable which is also an string object instance
+str = "Master JavaScript Master" //str is string variable which is also an string object instance
 console.log(typeof str);
 
 
 //find the character at a specific location
-console.log(str[5]);
-
+console.log(str[6]);
 
 //find the length of the string object
 console.log(str.length);
