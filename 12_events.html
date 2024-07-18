@@ -22,11 +22,14 @@ system produces (or "fires") a signal of some kind when an event occurs,
             console.log("Jack Hero");
         }
 
-        //adding event listner using addEventListener
-        const btn = document.getElementById("button");
-        btn.addEventListener("click", () => {
-            console.log("message");
-        })
+        //adding event listner using addEventListener(firstArg, secondArg) firstArg = events(String) secondArg = call_back_finction
+        const btn = document.querySelector("button");
+        btn.addEventListener("click", () => 
+            console.log("message")
+        )
+        btn.removeEventListener("click", () => 
+            console.log("removed event listener")
+        )
     </script>
 </body>
 </html>
