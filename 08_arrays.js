@@ -1,24 +1,24 @@
 // // // array is a way to store hetero-geneous data in the single var
 // // // array is also an object
 
-// arr = [1, "Shubham", true, null, undefined, 1,[1, 2, 3, 4, 5]] //array is a colletion of data types 
-// console.log(typeof arr);
+arr = [1, "Shubham", true, null, undefined, 1,[1, 2, 3, 4, 5]] //array is a colletion of data types 
+console.log(typeof arr);
 
 // //get the index of the item
 // console.log(arr.indexOf(1)); //gives the index of the first occurance of the object
 // console.log(arr.indexOf(1, 1)); //gives the index of the first occurance of the object from the specified index (second parameter)
 
-// //insert data at end
-// let newLen = arr.push(1, 4, " ") //method is used to push one or more data & ******returns new length
-// console.log(newLen);
+//insert data at end
+let newLen = arr.push(1, 4, " ") //method is used to push one or more data & ******returns new length
+console.log(newLen);
 
-// //insert data at start
-// arr.unshift("Shubham") //insert the data at the first index of arr
+//insert data at start
+arr.unshift("Shubham") //insert the data at the first index of arr
 
-// //remove the data
-// arr.pop(); //removes the last element from the arr
-// arr.shift(); //remove the first element from the arr
-// arr.splice(3, 2) //remove 2 elements from index 3
+//remove the data
+arr.pop(); //removes the last element from the arr
+arr.shift(); //remove the first element from the arr
+arr.splice(3, 2) //remove 2 elements from index 3
 
 
 // console.log("\n\n\n\n");
