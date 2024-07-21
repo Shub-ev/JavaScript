@@ -22,14 +22,30 @@ system produces (or "fires") a signal of some kind when an event occurs,
             console.log("Jack Hero");
         }
 
-        //adding event listner using addEventListener(firstArg, secondArg) firstArg = events(String) secondArg = call_back_finction
+        let handleMouseOut = () => {
+            console.log("Emadsf");
+            document.body.style.height = "100vh";
+            document.body.style.widows = "100vh";
+            document.body.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+        }
+
+        //adding event listner using addEventListener(firstArg, secondArg) firstArg = event(String) secondArg = call_back_finction
         const btn = document.querySelector("button");
-        btn.addEventListener("click", () => 
-            console.log("message")
-        )
-        btn.removeEventListener("click", () => 
-            console.log("removed event listener")
-        )
+        btn.addEventListener("mouseout", handleMouseOut);
+        
+        //we can add different function to same event and same element
+        btn.addEventListener("mouseout", () => {
+            console.log("Another Try is here");
+        });
+
+        //adding an event listener to same element but to remove previous event listener
+        btn.addEventListener("dblclick", () => {
+            //used to remove a specific event listener of a specific element
+            btn.removeEventListener("mouseout", handleMouseOut);
+        })
+        
+
+        
     </script>
 </body>
 </html>
