@@ -47,7 +47,7 @@ system produces (or "fires") a signal of some kind when an event occurs,
             //used to remove a specific event listener of a specific element
             btn.removeEventListener("mouseout", handleMouseOut);
         })
-
+ 
         btn.addEventListener("keydown", (event) => {
             console.log(event.key);
             if(event.key == "ArrowUp") controller.abort(); 
