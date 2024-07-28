@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 100vh; width: 100vw;">
+    <div style="height: 400px; width: 400px; display: flex; align-items: center; justify-content: center; background-color: pink;">
+        <button>Click</button>
+    </div>
+
+
+    <div class="container">
+        <button class="button">click</button>
+    </div>
+
+    <span class="output"></span>
+
+    <script>
+        const btn = document.querySelector("button");
+        const div = document.querySelector("div");
+        const body = document.querySelector("body");
+        
+        div.onclick = divHandler;
+        btn.onclick = buttonHandler; // event handler properties for event handling
+        body.onclick = bodyHandler;
+
+        function bodyHandler() {
+            body.style.backgroundColor = "pink";
+        }
+        function divHandler(event) {
+            event.stopPropagation(); // this methods stops the events from bubbling to the parents 
+            div.style.backgroundColor = "yellow";
+        }
+        function buttonHandler() {
+            btn.style.backgroundColor = "yellow";
+        }
+        // clicking on button will trigger all the event handlers of its parent also
+        // this is known as ***** event bubbling ***** in which events triggers from inner child and propagates to all parent triggers
+
+
+        // reverse bubbling also can be done i.e. parent event will be triggered first then child
+        // this can be done by using below
+        // btn.addEventListener('click', function_1, {capture: true});
+
+
+        // watching the bubbling flow using event object's 2 main properties 
+        // 1. event.target (target element on which event was initially fired) 
+        // 2. event.currentTarget (element on which event was mounted)
+        const output = document.querySelector(".output");
+        function handleClick(e) {
+            const logTarget = `Target: ${e.target.tagName}`;
+            const logCurrentTarget = `Current target: ${e.currentTarget.tagName}`;
+            output.textContent += `${logTarget}, ${logCurrentTarget}\n`;
+        }
+
+        const container = document.querySelector(".container");
+        const button = document.querySelector(".button");
+
+        document.body.addEventListener("click", handleClick);
+        container.addEventListener("click", handleClick);
+        button.addEventListener("click", handleClick);
+    </script>
+</body>
+</html>
