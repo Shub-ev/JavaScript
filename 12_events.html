@@ -48,11 +48,23 @@ system produces (or "fires") a signal of some kind when an event occurs,
             btn.removeEventListener("mouseout", handleMouseOut);
         })
  
-        btn.addEventListener("keydown", (event) => {
-            console.log(event.key);
+        btn.addEventListener("keydown", (event) => { // passing event object ref as parameter
+            console.log(event.key); //we can access different properties of the event object
             if(event.key == "ArrowUp") controller.abort(); 
         }, {signal: controller.signal}) //when abort() is called it will remove the listener
 
+
+        // other event listener mechanisms 
+        
+        // 01 -> Event Handler properties
+        // providing multiple function to same event handler properties is not possible 
+        // ex. btn.onclick = function_1 -> btn.onclick = function_2 because new will override previous 
+        btn.onfocus = () => {
+            btn.style.color = "red";
+        }
+        btn.onblur = () => {
+            btn.style.color = "yellow";
+        }
     </script> 
 </body>
 </html>
