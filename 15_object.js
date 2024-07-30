@@ -109,4 +109,4 @@ class RetiredTeacher extends Teacher{
     mySubject = () => {  // overrifin
         console.log(`I tought ${this.subject} years ago..`);
     }
-}
+} 
