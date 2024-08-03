@@ -106,7 +106,39 @@ class RetiredTeacher extends Teacher{
         this.age = ag;
     }
 
-    mySubject = () => {  // overrifin
+    mySubject = () => {  // overrinding (shadowing)
         console.log(`I tought ${this.subject} years ago..`);
     }
 } 
+
+
+// ******   06   ******* prototypes
+// Every object in JavaScript has a built-in property, which is called its prototype. 
+// The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype chain. 
+// The chain ends when we reach a prototype that has null for its own prototype.
+
+// if we crate an object
+let obj = { // event this object have only one property *** it have build in prototype property which holds different methods (toString) ***
+    name : "Shubham",
+};
+console.log(Object.getPrototypeOf(obj)); // Object.getPrototyOf is the method to get the prototype of passed object 
+// ****** if a property is not present in the current object it is searched in the protopy object. if not present then serached in prototype of prototy ******
+// ******  if a method is present in current object and in prototype also then current is used and method in prototype is "showdowed"  ******
+
+
+// ******   07   ******* setting an object's prototype in JavaScript
+
+// A. Using Object.create()
+// The Object.create() method creates a new object and allows you to specify an object that will be used as the new object's prototype.
+// ex.
+let proto = {
+    name: "prototype",
+    messageProto: () => {
+        console.log("This is a prototype object");
+    }
+}
+
+let newObj = Object.create(proto); // creating new object newObj which have proto object as its prototype
+console.log(newObj);
+console.log(Object.getPrototypeOf(newObj)); // this prints proto object as it is the prototype object of newObj
+
