@@ -90,4 +90,3 @@ const fetchPromise3 = fetch(
 
 
 // ***** 02 ***** async and await
-  
