@@ -35,7 +35,7 @@
 
 // ***** 02 ***** Promises
 
-// promises are the foundation of asynchronous programming in moder javascript.
+// promises are the foundation of asynchronous programming in modern javascript.
 // promise is the object returned by an async. function which represents the current state of the function (ex . pending etc.)
 // With a promise-based API, the asynchronous function starts the operation and returns a Promise object. 
 // You can then attach handlers to this promise object, and these handlers will be executed when the operation has succeeded or failed.
