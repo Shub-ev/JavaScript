@@ -92,7 +92,7 @@ button:nth-child(2):hover{
     background-color: rgb(51, 0, 255);
 }
 
-#themeChange{
+.themeChange{
     position: absolute;
     top: 0;
     right: 0;

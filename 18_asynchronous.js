@@ -40,43 +40,43 @@
 // With a promise-based API, the asynchronous function starts the operation and returns a Promise object. 
 // You can then attach handlers to this promise object, and these handlers will be executed when the operation has succeeded or failed.
 
-const fetchPromise = fetch(
-    "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
-);
-console.log(fetchPromise);
+// const fetchPromise = fetch(
+//     "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+// );
+// console.log(fetchPromise);
 
-fetchPromise.then((response) => {   // passing a handler function into the Promise's then() method.
-  console.log(`Received response: ${response.status}`);
-});
+// fetchPromise.then((response) => {   // passing a handler function into the Promise's then() method.
+//   console.log(`Received response: ${response.status}`);
+// });
 
-console.log("Started request…");
+// console.log("Started request…");
 
-// Chaining promises => when you deal with another promise when you are currenly in a promise then it is chaining promises
+// // Chaining promises => when you deal with another promise when you are currenly in a promise then it is chaining promises
 
-const fetchPromise2 = fetch(
-    "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
-)
-fetchPromise2.then(response => {
-    const jsonPromise = response.json();
-    jsonPromise.then(response => { // this is chaining promises
-        console.log(response[0]);
-    })
-})
-// above code can also be written as
+// const fetchPromise2 = fetch(
+//     "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+// )
+// fetchPromise2.then(response => {
+//     const jsonPromise = response.json();
+//     jsonPromise.then(response => { // this is chaining promises
+//         console.log(response[0]);
+//     })
+// })
+// // above code can also be written as
 
-const fetchPromise3 = fetch(
-    "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
-)
-.then(response => {
-    if(!response.ok){
-        throw new Error("Error");
-    }
+// const fetchPromise3 = fetch(
+//     "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+// )
+// .then(response => {
+//     if(!response.ok){
+//         throw new Error("Error");
+//     }
 
-    return response.json();
-})
-.then(response => {
-    console.log(response[0]);
-})
+//     return response.json();
+// })
+// .then(response => {
+//     console.log(response[0]);
+// })
 
 // To support error handling, Promise objects provide a catch() method.
 // the handler passed to then() is called when the asynchronous operation succeeds, 
@@ -90,4 +90,28 @@ const fetchPromise3 = fetch(
 
 
 // ***** 02 ***** async and await
- 
+// you can only use await inside an async function, unless your code is in a JavaScript module. 
+async function fetchProducts(){
+    try{
+        const response = await fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",);
+        // here in fetch instead of promise object we get we get fully complete response object as await makes fetch method wait 
+        // until complete response
+
+
+        if(!response.ok){
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // console.log(response);
+        return data;
+        
+    }
+    catch(e){
+        console.error(e);
+    }
+}
+
+fetchData = fetchProducts(); // async function always returns a promise so dont use it as data 
+console.log(fetchData); // Promise { <pending> }

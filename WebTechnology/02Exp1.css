@@ -65,7 +65,7 @@ button{
     gap: 20px;
 }
 
-#themeChange{
+.themeChange{
     position: absolute;
     top: 0;
     right: 0;

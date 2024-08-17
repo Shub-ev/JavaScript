@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link id="cssChange" rel="stylesheet" href="./02Exp3.css">
+    <style>
+        .themeDiv{
+            position: absolute;
+            top: 0;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            width: 600px;
+        }
+        .themeChange{
+            position: relative;
+        }
+    </style>
 </head>
+
 <body>
     <div class="page">
         <form action="" id="login">
-            <button id="themeChange" type="button">Theme Change</button>
+            <div class="themeDiv">
+                <button id="themeChange1" class="themeChange" type="button" onclick="changeTheme1()">Theme1</button>
+                <button id="themeChange2" class="themeChange" type="button" onclick="changeTheme2()">Theme2</button>
+                <button id="themeChange3" class="themeChange" type="button" onclick="changeTheme3()">Theme3</button>
+                <button id="themeChange4" class="themeChange" type="button" onclick="changeTheme1()">Theme4</button>
+            </div>
             <label class="title">LOGIN</label>
             <input type="text" placeholder="Enter name....">
             <input type="text" placeholder="Enter email address....">
             <input type="password" placeholder="Password">
             <div style="width: 80%; display: flex; justify-content: end;" style="margin: -10px;">
-                <span style="font-size: 18px;">Forget password? <span style="color: blue; font-weight: bold;">Reset</span></span>
+                <span style="font-size: 18px;">Forget password? <span
+                        style="color: blue; font-weight: bold;">Reset</span></span>
             </div>
             <div class="buttons">
                 <button type="submit">SUBMIT</button>
@@ -24,19 +45,39 @@
         </form>
 
         <script>
-            const themeChange = document.getElementById("themeChange");
-            const linkCSS = document.getElementById("cssChange");
+            // const themeChange = document.getElementById("themeChange");
+            // const linkCSS = document.getElementById("cssChange");
 
-            themeChange.addEventListener("click", () => {
-                console.log(document.body.style.backgroundColor);
-                if(document.body.style.backgroundColor !== "black"){
-                    document.body.style.backgroundColor = "black";
-                }
-                else{
-                    document.body.style.backgroundColor = "white";
-                }
-            })
+            // themeChange.addEventListener("click", () => {
+            //     console.log(document.body.style.backgroundColor);
+            //     if (document.body.style.backgroundColor !== "black") {
+            //         document.body.style.backgroundColor = "black";
+            //     }
+            //     else {
+            //         document.body.style.backgroundColor = "white";
+            //     }
+            // })
+
+            const link = document.getElementsByTagName("link")[0];
+
+            function changeTheme1() {
+                console.log("Button clicked");
+                
+                link.setAttribute("href", "./02Exp1.css");
+            }
+            function changeTheme2() {
+                console.log("Button clicked");
+                
+                link.setAttribute("href", "./02Exp2.css");
+            }
+            function changeTheme3() {
+                console.log("Button clicked");
+                
+                link.setAttribute("href", "./02Exp3.css");
+            }
+
         </script>
     </div>
 </body>
+
 </html>
