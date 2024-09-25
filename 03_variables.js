@@ -21,7 +21,7 @@ console.log(typeof num);
 // 2 string 
 let str = "MasterJS"
 str = 1234 + str;
-console.log(str);
+console.log(typeof str);
 
 // 3 Bool 
 var tr = false;
@@ -31,7 +31,7 @@ console.log(typeof tr);
 
 // 4 null
 var nul = null; //variable is initialized but dont have anything hence null even dont have data type
-console.log(typeof null);
+console.log(typeof null);   //type of null is object
 
 // 5 underfined
 var und;
@@ -57,9 +57,9 @@ var num = 1234567890123456789012345123523n; //makign a number BigInt by connecti
 var num = BigInt("1234567890123456789012345123523"); //makign a number BigInt by using BigInt constructor;
 console.log(num);
 
-//******************Data Types *********************/
+//****************** Data Types *********************/
 
-//******************Non-Primitive Data Types *********************/
+//****************** Non-Primitive Data Types *********************/
 
 // 1 Object 
 //This can be anything. Everything in JavaScript is an object and can be stored in a variable
@@ -77,3 +77,11 @@ for(var i in arr){
 console.log(typeof arr); // arrays are objects 
 
 //3 functions 
+function fn() { // definition
+    console.log("Inside function");
+    return function newFn(){
+        return "In a function which is inside a function";
+    }
+}
+const trFn = fn();   // function call
+console.log(trFn());
