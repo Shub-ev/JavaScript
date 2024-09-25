@@ -13,7 +13,6 @@ console.log(a);
 // console.log(b);  (Error!)  // you can not access b as it is limited to that scope only 
 
 
-
 var a = 20;
 (function(){
     console.log(a); //in this scope, there will be new a in the next line so due to **hoisting**(done during parsing) 
