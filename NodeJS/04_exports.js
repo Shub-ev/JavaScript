@@ -1,6 +1,7 @@
 // we can export code from current module and make available to other modules
 // this is done by module.exports (module is global obj in CommonJS)
 
+// here we are adding names property in exports object
 module.exports.names = ["Shubham", "Mahesh", "Hari", "Akanksha"];
 
 const allNames = (names) => {
@@ -14,3 +15,7 @@ const allNames = (names) => {
 // hence do as below
 
 module.exports.allNames = allNames;
+
+exports = {
+    allNames,
+}

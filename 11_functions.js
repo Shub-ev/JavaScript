@@ -33,6 +33,6 @@ console.log((function () { //this type of functions are not hoisted
 //     console.log("Hello");
 // })
 
-(function() { //immediately invoked function expression IIFE
-    console.log("Hello"); 
-})();
+(function(name) { //immediately invoked function expression IIFE
+    console.log("Hello " + name); 
+})("Shubham");

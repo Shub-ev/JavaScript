@@ -3,7 +3,7 @@ console.log(typeof str);
 
 
 //find the character at a specific location
-console.log(str[6]);
+console.log(str[3]);
 
 //find the length of the string object
 console.log(str.length);

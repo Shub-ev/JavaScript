@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
     }
     else{
         res.end(`
-            <div style='background-color: black; color:white;'>
+            <div style='background-color: black; color:white;                                                                                                                 '>
                 <h1>404</h1>
                 <h2>Page Not Found!</h2>
                 <br/>
