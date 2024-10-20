@@ -1,6 +1,6 @@
 // An object is a collection of related data and/or functionality. 
-//These usually consist of several variables and functions (which are called properties and methods when they are inside objects). 
-//Let's work through an example to understand what they look like.
+// These usually consist of several variables and functions (which are called properties and methods when they are inside objects). 
+// Let's work through an example to understand what they look like.
 
 
 // object literal
@@ -49,11 +49,29 @@ bobPerson.height = height;
 console.log(bobPerson);
 console.log(bobPerson.height);
 
-
+console.log("************ Factory Function ************");
 // ******   03   ******* constructor functions/methods
 // these are used to create objects having same members and member functions
 // function used to create similar objects is constructor
-function Human (name) {  // functions name should be similar as object but with capital letter (not compulsory, for convinience)
+function Student(name, age){  // functions name should be similar as object but with capital letter (not compulsory, for convinience)
+    console.log(this);  
+    this.sName = name;
+    this.age = age;
+
+    this.introduce = () => {
+        console.log(this);
+    }
+}
+const stud = new Student("Shubham", 20);
+console.log(stud);
+console.log(stud.introduce());
+
+
+console.log("************ Constructor Function ************");
+// ******   04   ******* Factory functions/methods
+// factory function creates object explicitly and return the ref
+// no need of new while calling the function
+function Human (name) {  
     const human = {} // const objects can be modified bcoz person holds ref of {}/object not actual obj
 
     human.name = name;
@@ -62,10 +80,8 @@ function Human (name) {  // functions name should be similar as object but with 
     }
     return human;
 }
-let human1 = new Human("Harish"); // creating object using class constructor
+let human1 = Human("Harish"); // creating object using class constructor
 console.log(human1);
-
-
 
 
 // ******   04   ******* inheritance
