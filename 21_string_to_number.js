@@ -24,4 +24,4 @@ string = "1111" // binary string
 console.log(parseInt(string, 2));
 
 // 3. add + prior to string number
-console.log(typeof (+"1234")); 
+console.log(typeof (+"1234"));
